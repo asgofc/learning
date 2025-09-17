@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/google/uuid"
@@ -29,4 +31,10 @@ func main() {
 	tasks = append(tasks, t)
 	fmt.Print(tasks)
 
+	sc := bufio.NewScanner(os.Stdin)
+	for sc.Scan() {
+		command := sc.Text()
+		fmt.Println(command)
+
+	}
 }
